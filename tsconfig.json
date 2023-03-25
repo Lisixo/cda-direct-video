@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "target": "ES2022",
+    "outDir": "./build",
+    "declaration": true,
+    "declarationDir": "./types"
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
