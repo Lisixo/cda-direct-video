@@ -21,5 +21,13 @@ yarn add cda-direct-video
 pnpm add cda-direct-video
 ```
 
+# Usage
+
+```js
+import { getDirectLinks } from 'cda-direct-video'
+
+const data = await getDirectLinks('https://www.cda.pl/video/13765999b2')
+```
+
 [cda]: https://www.cda.pl
 [nodejs]: https://nodejs.org/
