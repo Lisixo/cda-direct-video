@@ -100,7 +100,7 @@ export async function getDirectLinks(url: string): Promise<(Results | ErrorMessa
   return {
     success: true,
     id: id,
-    title: data.video.title,
+    title: decodeURI(data.video.title),
     videos: qualities
   }
 }
