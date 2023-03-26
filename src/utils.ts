@@ -15,7 +15,7 @@ export function isURL(url: string): boolean{
 }
 
 export function formatDomain(url: string){
-  return new URL(`https://www.cda.pl/video/1374107484`).hostname.match(WWW_FILTER_REGEX)[0]
+  return new URL(url).hostname.match(WWW_FILTER_REGEX)[0]
 }
 
 export function isSupportedDomain(url: string){
