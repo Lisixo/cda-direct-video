@@ -1,8 +1,8 @@
 {
   "name": "cda-direct-video",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Tool for gathering direct video links from cda.pl",
+  "main": "build/index.js",
   "type": "module",
   "scripts": {
     "test": "jest",
@@ -16,10 +16,10 @@
     "video"
   ],
   "files": [
-    "./build/**/*.js",
-    "./types/**/*.d.ts"
+    "build/**/*.js",
+    "types/**/*.d.ts"
   ],
-  "types": "./types",
+  "types": "types",
   "bugs": {
     "url": "https://github.com/Lisixo/cda-direct-video/issues"
   },
