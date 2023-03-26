@@ -1,1 +1,1 @@
-export * from './video-getter'
+export * from './video-getter.js'

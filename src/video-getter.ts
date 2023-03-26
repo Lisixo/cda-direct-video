@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios"
-import { isSupportedDomain, isURL } from "./utils"
+import { isSupportedDomain, isURL } from "./utils.js"
 import { JSDOM } from 'jsdom'
 
 export async function getDirectLinks(url: string): Promise<(Results | ErrorMessage)>{
