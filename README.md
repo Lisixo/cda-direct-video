@@ -26,7 +26,7 @@ pnpm add cda-direct-video
 ```js
 import { getDirectLinks } from 'cda-direct-video'
 
-const data = await getDirectLinks('https://www.cda.pl/video/13765999b2')
+const data = await getDirectLinks('https://www.cda.pl/video/10359422ad')
 ```
 
 [cda]: https://www.cda.pl
