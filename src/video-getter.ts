@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios, { AxiosError } from "axios"
 import { isSupportedDomain, isURL } from "./utils"
 import { JSDOM } from 'jsdom'
 
@@ -11,7 +11,33 @@ export async function getDirectLinks(url: string): Promise<(Results | ErrorMessa
     }
   }
 
-  const cdaRequest = await axios.get(url, { withCredentials: false })
+  let cdaRequest
+
+  try{
+    cdaRequest = await axios.get(url, { withCredentials: false })
+  } catch(error: unknown){
+    if( error instanceof AxiosError ){
+      if(error.response.status === 404)
+        return { 
+          success: false,
+          code: 'E_INVALID_ID',
+          message: 'Invalid video ID provided'
+        }
+      
+      return { 
+        success: false,
+        code: 'E_BAD_REQUEST',
+        message: 'Received invalid response from platform'
+      }
+    }
+
+    return { 
+      success: false,
+      code: 'E_UNKNOWN',
+      message: 'Unknown error'
+    }
+  }
+  
 
   const { window: playerWindow } = new JSDOM(cdaRequest.data)
 
