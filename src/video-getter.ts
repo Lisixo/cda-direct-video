@@ -62,7 +62,7 @@ export async function getDirectLinks(url: string): Promise<(Results | ErrorMessa
   }
 
   const rawQualities: {[key: string]: string} = data.video.qualities
-  const id = parseInt(data.video.id)
+  const id = data.video.id
   const timestamp = data.video.ts
   const hash = data.video.hash2
   
@@ -113,7 +113,7 @@ export interface ErrorMessage{
 
 export interface Results{
   success: true
-  id: number
+  id: string
   title: string
   videos: VideoData[]
 }
