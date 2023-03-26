@@ -1,6 +1,6 @@
 {
   "name": "cda-direct-video",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tool for gathering direct video links from cda.pl",
   "main": "build/index.js",
   "type": "module",
