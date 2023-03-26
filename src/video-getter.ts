@@ -1,4 +1,4 @@
-import axios, { AxiosError } from "axios"
+import axios, { AxiosError, AxiosResponse } from "axios"
 import { isSupportedDomain, isURL } from "./utils.js"
 import { JSDOM } from 'jsdom'
 
@@ -85,8 +85,15 @@ export async function getDirectLinks(url: string): Promise<(Results | ErrorMessa
       id: ++i
     }
 
-    const api = await axios.post<CdaAPIResponse>(`https://www.cda.pl`, body)
+    let api: AxiosResponse<CdaAPIResponse, any>
 
+    try{
+      api = await axios.post<CdaAPIResponse>(`https://www.cda.pl`, body)
+    }
+    catch(error: unknown){
+      continue
+    }
+    
     if(api.data.result.status !== 'ok')
       continue
 
